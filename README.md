@@ -16,4 +16,3 @@ We're working on an API to give off data of the Bilkent University courses offer
 	git clone $1
 	cd $2
 	python parser/stars_offerings_crawler.py
-
