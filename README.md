@@ -13,6 +13,6 @@ We're working on an API to give off data of the Bilkent University courses offer
 
 	pip install beautifulsoup4
 	pip install pymongo
-	git clone $1
-	cd $2
+	git clone https://github.com/cagdasoztekin/offerings-huntsman.git
+	cd offerings-huntsman
 	python parser/stars_offerings_crawler.py
