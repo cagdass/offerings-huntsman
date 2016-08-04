@@ -49,6 +49,16 @@ semester = '20161'
 
 parser = Parser()
 
+# TODO: Write a service to do the following separately.
+def getCollection(host = 'localhost', port = 27017, collectionName = '20161'):
+    client = MongoClient(host, port)
+    db = client.offerings
+    collection = db['semester' + collectionName]
+    collection.delete_many({})
+    return collection
+
+collection = getCollection()
+
 while True:
     departmentCode = departments.next()
     print departmentCode
@@ -58,12 +68,6 @@ while True:
 
     departmentData = {'currentCourses': currentCourses}
     jsonData = json.dumps(departmentData)
-
-    # TODO: Write a service to do the following separately.
-    client = MongoClient('localhost', 27017)
-    db = client.offerings20161
-    collection = db[departmentCode]
-    collection.delete_many({})
 
     for course in currentCourses:
         sectionID = collection.insert_one(course).inserted_id
