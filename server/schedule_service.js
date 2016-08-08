@@ -7,6 +7,18 @@ function schedule_service(db){
   var validate = require('validate.js')
   // var constraints = require('./user_constraints');
 
+  // Find distinct departments
+  service.find_distinct_departments = function(){
+    console.log("Retrieving distinct departments.");
+    return Promise.try(function(){
+      return mongo_service.getCollection()
+      .then(function(collection){
+        return collection.distinct("departmentCode")
+      })
+    })
+  }
+
+  // Find classes that are in this classroom.
   service.find_classroom = function(classroom){
     console.log("Finding classroom " + JSON.stringify(classroom));
     return Promise.try(function(){

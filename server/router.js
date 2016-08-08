@@ -10,6 +10,21 @@ module.exports = (function() {
 
     router.use(bodyParser.json());
 
+    router.get('/departments', function(req, res){
+      service_instance.find_distinct_departments()
+      .then(function(result){
+        if(result == null){
+          res.status(404).send(result);
+        }
+        else{
+          res.status(200).send(result);
+        }
+      })
+      .catch(function(error){
+        console.error(error);
+      })
+    });
+
     router.get('/classroom', function (req, res) {
       var param = req.query.location;
       var classroom = {
@@ -26,7 +41,7 @@ module.exports = (function() {
         }
       })
       .catch(function(error){
-        console.error(error)
+        console.error(error);
       })
     });
 
