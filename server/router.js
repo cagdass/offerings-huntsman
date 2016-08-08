@@ -10,6 +10,26 @@ module.exports = (function() {
 
     router.use(bodyParser.json());
 
+    // departments/department?departmentCode=" + departmentCode
+    router.get('/departments/department', function(req, res){
+      // var param = req.query.departmentCode;
+      var department = {
+        "departmentCode": "CS"
+      }
+      service_instance.find_classes_from_department(department)
+      .then(function(result){
+        if(result == null){
+          res.status(404).send(result)
+        }
+        else{
+          res.status(200).send(result)
+        }
+      })
+      .catch(function(error){
+        console.error(error);
+      })
+    });
+
     router.get('/departments', function(req, res){
       service_instance.find_distinct_departments()
       .then(function(result){
