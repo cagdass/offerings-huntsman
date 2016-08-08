@@ -1,2 +1,4 @@
 # Ignore Python bytecode.
 *.pyc
+
+./server/node_modules/*
