@@ -4,9 +4,9 @@ class DepartmentService {
     constructor() {
     }
 
-    findUserById(userId) {
-        return baseAPI.get("users/user?user_id=" + userId).catch(error => {
-            return {_id: userId, name: "Ali"};
+    departmentDetails(departmentCode) {
+        return baseAPI.get("departments/department?departmentCode=" + departmentCode).catch(error => {
+            return {departmentCode: "CS"};
         })
     }
 
