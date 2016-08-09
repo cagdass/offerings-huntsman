@@ -3,7 +3,7 @@
 ## What dis be?
 Get your JSON data of the Bilkent University courses offered in the upcoming semester. 
 
-## I can't be arsed to this API:
+## *I can't be arsed to this* API:
 
 * For all the data of all the classes:
 
@@ -12,6 +12,45 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 * Filter by department:
 
 	GET cgds.me:3000?department=CS
+
+* Sample data:
+
+	{
+	  "_id": "57a9966fb93db11e9fba512a",
+ 	  "lectures": 
+	    [
+	      {
+                "hours": ["08:40","09:30"],
+		"status": "[S]",
+		"day": "Mon",
+		"location": "EA-Z01"
+	      },
+	      {
+		"hours": ["09:40","10:30"],
+		"status": "",
+		"day": "Mon",
+		"location": "EA-Z01"
+	      },
+	      {
+		"hours": ["10:40","12:30"],
+		"status": "",
+		"day": "Wed",
+		"location":"EA-Z01"
+	      }
+	    ],
+	  "title": "Algorithms for Web-Scale Data",
+	  "bilkentCredit": "3",
+	  "section": "1",
+	  "totalQuota": "60",
+	  "enrollmentElective": "0",
+	  "enrollmentTotal": "0",
+	  "enrollmentMust":"0",
+	  "courseCode": "425",
+	  "departmentCode": "CS",
+	  "instructor": ["Muhammet Mustafa Özdal"],
+	  "ectsCredit":"6",
+	  "availableQuota":"60"
+	}
 
 Feel free to contribute if you want to add other filters and stuff.
 
