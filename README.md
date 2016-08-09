@@ -15,12 +15,13 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 
 * Sample data:
 	
-```javascript{
+```javascript
+{
   "_id": "57a9966fb93db11e9fba512a",
 	  "lectures":
     [
       {
-               "hours": ["08:40","09:30"],
+        "hours": ["08:40","09:30"],
 	"status": "[S]",
 	"day": "Mon",
 	"location": "EA-Z01"
@@ -50,7 +51,8 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
   "instructor": ["Muhammet Mustafa Özdal"],
   "ectsCredit":"6",
   "availableQuota":"60"
-}```
+}
+```
 
 Feel free to contribute if you want to add other filters and stuff.
 
