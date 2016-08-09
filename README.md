@@ -22,3 +22,6 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 
 * Change the boolean to False in line 51 if you do not want to write it to a database.
 * Do not forget to modify the default parameters when writing to the database.
+- By default, it connects to MongoDB at your localhost, on port 27017.
+- Writes the results to the database named 'offerings', all the data for all departments into the same collection, titled 'semester20161'.
+- And all this is mutable.
