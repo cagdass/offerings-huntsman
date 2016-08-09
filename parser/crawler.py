@@ -15,10 +15,10 @@ class Department:
 
     def next(self):
         self.count += 1
-        if(self.count >= self.length):
+        if(self.count > self.length):
             return ''
         else:
-            return self.departments[self.count]
+            return self.departments[self.count - 1]
 
 def get_pretty_source(departmentCode, semester):
     url = 'https://stars.bilkent.edu.tr/homepage/print/plainOfferings.php?COURSE_CODE='
