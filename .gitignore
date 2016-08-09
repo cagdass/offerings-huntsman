@@ -1,4 +1,2 @@
 # Ignore Python bytecode.
 *.pyc
-
-node_modules/
