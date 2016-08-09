@@ -3,6 +3,16 @@
 ## What dis be?
 Get your JSON data of the Bilkent University courses offered in the upcoming semester. 
 
+## I can't be arsed to this API:
+
+For all the data of all the classes:
+
+GET cgds.me:3000
+
+Filter by department:
+
+GET cgds.me:3000?department=CS
+
 ## Requirements 
 * [Python 2.7.x](http://docs.python-guide.org/en/latest/starting/installation/)
 * [pip](https://pip.pypa.io/en/stable/installing/)
