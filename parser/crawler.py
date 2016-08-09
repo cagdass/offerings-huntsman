@@ -1,9 +1,9 @@
 import urllib2
 import json
 from bs4 import BeautifulSoup
-from pymongo import MongoClient
 
 from parser import Parser
+from inserter import Inserter
 
 # Takes about 2 minutes to crunch data of all the departments' offerings
 
@@ -48,26 +48,25 @@ departments = Department()
 semester = '20161'
 
 parser = Parser()
+writeToMongo = True
 
-# TODO: Write a service to do the following separately.
-def getCollection(host = 'localhost', port = 27017, collectionName = '20161'):
-    client = MongoClient(host, port)
-    db = client.offerings
-    collection = db['semester' + collectionName]
-    collection.delete_many({})
-    return collection
+if writeToMongo:
+    # Check for options for initialization of Inserter
+    inserter = Inserter(collectionName=semester)
+    collection = inserter.getCollection()
 
-collection = getCollection()
+departmentCode = departments.next()
+while departmentCode != '':
 
-while True:
-    departmentCode = departments.next()
     print departmentCode
-    if(departmentCode == ''):
-        break
     currentCourses = get_courses(departmentCode, parser)
 
     departmentData = {'currentCourses': currentCourses}
-    jsonData = json.dumps(departmentData)
+    print departmentData
+    jsonData = json.dumps(departmentData) # All yours
 
-    for course in currentCourses:
-        sectionID = collection.insert_one(course).inserted_id
+    if writeToMongo:
+        for course in currentCourses:
+            sectionID = collection.insert_one(course).inserted_id
+
+    departmentCode = departments.next()

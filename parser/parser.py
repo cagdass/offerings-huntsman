@@ -1,3 +1,5 @@
+# Imagine how many lines of code, and hours of innocent lives it would have taken to write this in C.
+
 class Parser:
   def get_pretty_source(self, departmentCode, semester):
       url = 'https://stars.bilkent.edu.tr/homepage/print/plainOfferings.php?COURSE_CODE='
