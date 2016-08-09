@@ -19,26 +19,24 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 {
   "_id": "57a9966fb93db11e9fba512a",
   "lectures":
-    [
-      {
-        "hours": ["08:40","09:30"],
-	"status": "[S]",
-	"day": "Mon",
-	"location": "EA-Z01"
-      },
-      {
-	"hours": ["09:40","10:30"],
-	"status": "",
-	"day": "Mon",
-	"location": "EA-Z01"
-      },
-      {
-	"hours": ["10:40","12:30"],
-	"status": "",
-	"day": "Wed",
-	"location":"EA-Z01"
-      }
-    ],
+    [{
+       "hours": ["08:40","09:30"],
+       "status": "[S]",
+       "day": "Mon",
+       "location": "EA-Z01"
+     },
+     {
+       "hours": ["09:40","10:30"],
+       "status": "",
+       "day": "Mon",
+       "location": "EA-Z01"
+     },
+     {
+       "hours": ["10:40","12:30"],
+       "status": "",
+       "day": "Wed",
+       "location":"EA-Z01"
+    }],
   "title": "Algorithms for Web-Scale Data",
   "bilkentCredit": "3",
   "section": "1",
