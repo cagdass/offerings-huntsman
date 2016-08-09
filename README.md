@@ -18,7 +18,7 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 ```javascript
 {
   "_id": "57a9966fb93db11e9fba512a",
-	  "lectures":
+  "lectures":
     [
       {
         "hours": ["08:40","09:30"],
