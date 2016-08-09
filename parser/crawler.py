@@ -48,10 +48,10 @@ departments = Department()
 semester = '20161'
 
 parser = Parser()
-writeToMongo = True
+writeToMongo = True # Change to False not to write to mongo database.
 
 if writeToMongo:
-    # Check for options for initialization of Inserter
+    # Check for options for initialization of Inserter, options like where to write, db
     inserter = Inserter(collectionName=semester)
     collection = inserter.getCollection()
 

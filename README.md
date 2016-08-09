@@ -1,10 +1,7 @@
 # Offerings Huntsman 
 
 ## What dis be?
-We're working on an API to give off data of the Bilkent University courses offered in the upcoming semester. 
-
-There is also a server application and a React application that'll hopefully be complete soon, to display professors' schedules and which classes are there in classrooms. 
-The JS applications might get their own repository.
+Get your JSON data of the Bilkent University courses offered in the upcoming semester. 
 
 ## Requirements 
 * [Python 2.7.x](http://docs.python-guide.org/en/latest/starting/installation/)
@@ -14,9 +11,14 @@ The JS applications might get their own repository.
 
 ## Usage
 
-	pip install beautifulsoup4
-	pip install pymongo
+	pip install beautifulsoup4 #If you don't have it already.
+	pip install pymongo #Optional.
 	git clone https://github.com/cagdasoztekin/offerings-huntsman.git
 	cd offerings-huntsman
-	python parser/stars_offerings_crawler.py
+	nano parser/crawler.py #Modify if necessary.
+	python parser/crawler.py
 
+## Notes
+
+* Change the boolean to False in line 51 if you do not want to write it to a database.
+* Do not forget to modify the default parameters when writing to the database.
