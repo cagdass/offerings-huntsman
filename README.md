@@ -9,52 +9,47 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 
 	GET cgds.me:3000
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
 * Filter by department:
 
 	GET cgds.me:3000?department=CS
 
 * Sample data:
 	
-```{<br>
-  "_id": "57a9966fb93db11e9fba512a",<br>
-	  "lectures": <br>
+```javascript{
+  "_id": "57a9966fb93db11e9fba512a",
+	  "lectures":
     [
-      {<br>
-               "hours": ["08:40","09:30"],<br>
-	"status": "[S]",<br>
-	"day": "Mon",<br>
-	"location": "EA-Z01"<br>
-      },<br>
-      {<br>
-	"hours": ["09:40","10:30"],<br>
-	"status": "",<br>
-	"day": "Mon",<br>
-	"location": "EA-Z01"<br>
-      },<br>
-      {<br>
-	"hours": ["10:40","12:30"],<br>
-	"status": "",<br>
-	"day": "Wed",<br>
-	"location":"EA-Z01"<br>
+      {
+               "hours": ["08:40","09:30"],
+	"status": "[S]",
+	"day": "Mon",
+	"location": "EA-Z01"
+      },
+      {
+	"hours": ["09:40","10:30"],
+	"status": "",
+	"day": "Mon",
+	"location": "EA-Z01"
+      },
+      {
+	"hours": ["10:40","12:30"],
+	"status": "",
+	"day": "Wed",
+	"location":"EA-Z01"
       }
-    ],<br>
-  "title": "Algorithms for Web-Scale Data",<br>
-  "bilkentCredit": "3",<br>
-  "section": "1",<br>
-  "totalQuota": "60",<br>
-  "enrollmentElective": "0",<br>
-  "enrollmentTotal": "0",<br>
-  "enrollmentMust":"0",<br>
-  "courseCode": "425",<br>
-  "departmentCode": "CS",<br>
-  "instructor": ["Muhammet Mustafa Özdal"],<br>
-  "ectsCredit":"6",<br>
-  "availableQuota":"60"<br>
+    ],
+  "title": "Algorithms for Web-Scale Data",
+  "bilkentCredit": "3",
+  "section": "1",
+  "totalQuota": "60",
+  "enrollmentElective": "0",
+  "enrollmentTotal": "0",
+  "enrollmentMust":"0",
+  "courseCode": "425",
+  "departmentCode": "CS",
+  "instructor": ["Muhammet Mustafa Özdal"],
+  "ectsCredit":"6",
+  "availableQuota":"60"
 }```
 
 Feel free to contribute if you want to add other filters and stuff.
