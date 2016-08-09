@@ -10,12 +10,30 @@ module.exports = (function() {
 
     router.use(bodyParser.json());
 
+    // Get the classes of a professor
+    // professors/professor?name=" + instructor
+    router.get('/professors/professor', function(req, res){
+        var name = req.query.name;
+        var instructor = {"instructor": name};
+        service_instance.find_classes_from_instructor(instructor)
+        .then(function(result) {
+            if (result == null) {
+                res.status(404).send(result)
+            }
+            else {
+                res.status(200).send(result)
+            }
+        })
+        .catch(function(error){
+            console.error(error);
+        })
+    });
+
+    // Get all courses offered by a department
     // departments/department?departmentCode=" + departmentCode
     router.get('/departments/department', function(req, res){
-      // var param = req.query.departmentCode;
-      var department = {
-        "departmentCode": "CS"
-      }
+      var param = req.query.departmentCode;
+      var department = {"departmentCode" : param};
       service_instance.find_classes_from_department(department)
       .then(function(result){
         if(result == null){
