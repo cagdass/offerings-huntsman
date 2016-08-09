@@ -1,5 +1,6 @@
 import React, {PropTypes} from "react";
 import {Button, Col, Glyphicon, Panel, Row, Table} from "react-bootstrap";
+import {Link} from "react-router";
 import departmentService from "./department_service.js";
 
 class DepartmentDetails extends React.Component {
@@ -17,7 +18,7 @@ class DepartmentDetails extends React.Component {
 
     renderClass(clase, index) {
       return <tr key={index}>
-        <td>{clase.instructor}</td>
+        <td><Link to={`/professor/${clase.instructor.replace(" ", "%20")}`}>{clase.instructor}</Link></td>
         <td>{clase.title}</td>
         <td>{clase.departmentCode + clase.courseCode + "-" + clase.section}</td>
         </tr>

@@ -4,7 +4,14 @@ class DepartmentService {
     constructor() {
     }
 
+    professorDetails(instructor) {
+        return baseAPI.get("professors/professor?name=" + instructor).catch(error => {
+            return null;
+        })
+    }
+
     departmentDetails(departmentCode) {
+        console.log("departments/department?departmentCode=" + departmentCode);
         return baseAPI.get("departments/department?departmentCode=" + departmentCode).catch(error => {
             return {departmentCode: "CS"};
         })

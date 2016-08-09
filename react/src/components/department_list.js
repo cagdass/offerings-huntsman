@@ -24,7 +24,7 @@ class DepartmentList extends React.Component {
 
     renderDepartment(department) {
         return <tr key={department}>
-            <td><Link to={"/department:" + department}>Details</Link></td>
+            <td><Link to={`/department/${department}`}>Details</Link></td>
             <td>{department}</td>
         </tr>
     }
