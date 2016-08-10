@@ -58,11 +58,11 @@ if writeToMongo:
 departmentCode = departments.next()
 while departmentCode != '':
 
-    print departmentCode
+    # print departmentCode
     currentCourses = get_courses(departmentCode, parser)
 
     departmentData = {'currentCourses': currentCourses}
-    print departmentData
+    # print departmentData
     jsonData = json.dumps(departmentData) # All yours
 
     if writeToMongo:

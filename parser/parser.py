@@ -1,6 +1,10 @@
 # Imagine how many lines of code, and hours of innocent lives it would have taken to write this in C.
+import re
 
 class Parser:
+  def __init__(self):
+      self.regex = re.compile('[0-9\[\]]')
+
   def get_pretty_source(self, departmentCode, semester):
       url = 'https://stars.bilkent.edu.tr/homepage/print/plainOfferings.php?COURSE_CODE='
       url2 = '&SEMESTER='
@@ -47,7 +51,6 @@ class Parser:
               for span in spans:
                   data = span.text
                   instructors.append(data)
-                #   print "Appending " + data
               currentCourse['instructor'] = instructors
         # Bilkent credits. Example: '3'
         elif count == 3:
@@ -70,7 +73,10 @@ class Parser:
               building = ''
               # As far as I gather, all classrooms follow the following format [[building]-[classroom]]. Split on '-' to get the building.
               try:
-                  building = location.split("-")[0]
+                  test = location.split("-")[0]
+                  if(len(self.regex.findall(test)) == 0):
+                      print test
+                      building = test
               # Classroom might be empty.
               except IndexError:
                   print 'No building'
