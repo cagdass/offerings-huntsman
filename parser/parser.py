@@ -67,10 +67,17 @@ class Parser:
               endHour = str(hours[1])
               status = ''
               location = str(datums[2]).strip()
+              building = ''
+              # As far as I gather, all classrooms follow the following format [[building]-[classroom]]. Split on '-' to get the building.
+              try:
+                  building = location.split("-")[0]
+              # Classroom might be empty.
+              except IndexError:
+                  print 'No building'
               if '[' in location:
                   status = location[-3:]
                   location = location[:-3]
-              lectures.append({'day': day, 'hours': hours, 'location': location, 'status': status})
+              lectures.append({'day': day, 'hours': hours, 'location': location, 'status': status, 'building': building})
               currentCourse['lectures'] = lectures
         # Total quota of the course. '65' is quite common.
         elif count == 7:
