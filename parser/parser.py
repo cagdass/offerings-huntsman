@@ -75,7 +75,6 @@ class Parser:
               try:
                   test = location.split("-")[0]
                   if(len(self.regex.findall(test)) == 0):
-                      print test
                       building = test
               # Classroom might be empty.
               except IndexError:
