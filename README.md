@@ -22,18 +22,21 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
     [{
        "hours": ["08:40","09:30"],
        "status": "[S]",
+       "building": "EA",
        "day": "Mon",
        "location": "EA-Z01"
      },
      {
        "hours": ["09:40","10:30"],
        "status": "",
+       "building": "EA",
        "day": "Mon",
        "location": "EA-Z01"
      },
      {
        "hours": ["10:40","12:30"],
        "status": "",
+       "building": "EA",
        "day": "Wed",
        "location":"EA-Z01"
     }],
