@@ -13,6 +13,8 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 
 	GET cgds.me:3000?department=CS
 
+*You want more filters? Drop a goddamn star*
+
 * Sample data:
 	
 ```javascript
