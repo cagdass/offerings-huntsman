@@ -5,13 +5,7 @@ Get your JSON data of the Bilkent University courses offered in the upcoming sem
 
 ## *I can't be arsed to this* API:
 
-* For all the data of all the classes:
-
-	GET cgds.me:3000
-
-* Filter by department:
-
-	GET cgds.me:3000?department=CS
+Here's the API to the application running on my server: [https://github.com/cagdass/where-is-my-hoca-server/wiki](https://github.com/cagdass/where-is-my-hoca-server/wiki)
 
 *You want more filters? Drop a goddamn star*
 
