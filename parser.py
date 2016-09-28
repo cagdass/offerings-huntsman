@@ -61,6 +61,7 @@ class Parser:
         # An array of lecture hours/locations. lectures[0] could be {day: 'Tue', startHour: '15:40', endHour: '16:30', status: '', location: 'EA-Z03'}
         elif count == 5:
           lectures = []
+          lecturesRaw = data.split('\n')
           for line in data.split('\n'):
             datums = line.split(' ')
             if(len(datums) > 1):
@@ -84,6 +85,7 @@ class Parser:
                   location = location[:-3]
               lectures.append({'day': day, 'hours': hours, 'location': location, 'status': status, 'building': building})
               currentCourse['lectures'] = lectures
+              currentCourse['lecturesRaw'] = lecturesRaw
         # Total quota of the course. '65' is quite common.
         elif count == 7:
           currentCourse['totalQuota'] = str(data)
