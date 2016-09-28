@@ -108,7 +108,8 @@ for department in departments:
                             'section': section,
                             'hours': timetable,
                             'instructor': thatClass['instructor'],
-                            'title': thatClass['title']
+                            'title': thatClass['title'],
+                            'lecturesRaw': thatClass['lecturesRaw']
                         })
                     except:
                         print "No lectures for " + str(thatClass['departmentCode'] + thatClass['courseCode'] + '-' + thatClass['section'])

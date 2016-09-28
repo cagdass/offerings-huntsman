@@ -61,7 +61,11 @@ class Parser:
         # An array of lecture hours/locations. lectures[0] could be {day: 'Tue', startHour: '15:40', endHour: '16:30', status: '', location: 'EA-Z03'}
         elif count == 5:
           lectures = []
-          lecturesRaw = data.split('\n')
+          lraw = data.split('\n')
+          lecturesRaw = []
+          for lecture in lraw:
+              if(len(lecture) > 0):
+                  lecturesRaw.append(lecture.replace('\r', ''))
           for line in data.split('\n'):
             datums = line.split(' ')
             if(len(datums) > 1):
