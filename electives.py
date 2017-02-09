@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import json
+import sys
 
 # Create another collection to easily fetch the elective classrooms querying by timetables.
 # This duderino has a lot of common code with classroom.py, I will do some refactoring inshallah.
@@ -42,11 +43,13 @@ def hoursToInt(hours):
 
     hoursInt = []
 
-    startInt = int(start.split(':')[0]) - 8
-    endInt = int(end.split(':')[0]) - 8
+    startInt = int(start.split(':')[0])
+    endInt = int(end.split(':')[0])
     if(startInt > 12):
         startInt -= 1
         endInt -= 1
+    startInt -= 8
+    endInt -= 8
     for i in xrange(startInt, endInt):
         hoursInt.append(i)
 
