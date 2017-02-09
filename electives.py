@@ -69,7 +69,7 @@ with open('config.json') as config:
     data = json.load(config)
 semester = data['semester']
 
-collection = getCollection()
+collection = getCollection(collectionName=semester)
 
 electivesCollection = getCollection(collectionName = (semester + 'electives'))
 electivesCollection.delete_many({})
